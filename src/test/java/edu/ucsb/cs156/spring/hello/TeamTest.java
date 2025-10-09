@@ -45,7 +45,15 @@ public class TeamTest {
     @Test
     public void returns_same_class_same_obj() {
         Team tp = new Team("test-team");
+        tp.setMembers(team.getMembers());
         assert(team.equals(tp));
+    }
+
+    @Test
+    public void returns_different_members() {
+        Team tp = new Team("test-team");
+        tp.addMember("joe");
+        assertEquals(false, team.equals(tp));
     }
 
 
